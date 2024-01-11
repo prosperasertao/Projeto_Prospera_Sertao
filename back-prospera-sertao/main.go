@@ -1,23 +1,23 @@
 package main
 
 import (
-	"prospera_sertao_api/config"
-	"prospera_sertao_api/router"
+	"github.com/prosperasertao/Projeto_Prospera_Sertao/tree/main/back-prospera-sertao/config"
+	"github.com/prosperasertao/Projeto_Prospera_Sertao/tree/main/back-prospera-sertao/router"
 )
 
-var(
-	logger config.Logger
+var (
+	logger *config.Logger
 )
 
 func main() {
-	logger = *config.GetLogger("main")
-	// Initialize configs
+	logger = config.GetLogger("main")
+	// Initialize Configs
 	err := config.Init()
 	if err != nil {
-		logger.Errorf("Error initializing configs: %v", err)
+		logger.Errorf("config initialization error: %v", err)
 		return
 	}
 
-	// Initialize the router
+	// Initialize Route"
 	router.Initialize()
 }
