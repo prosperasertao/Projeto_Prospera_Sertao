@@ -1,9 +1,31 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
-  formContainer: {
-    flex: 1,
+  containerPage:{
     width:"100%",
+    height:"100%",
+  },
+  containerBtn: {
+  width: "100%",
+  justifyContent: "flex-end",
+  alignItems: "flex-end",
+  backgroundColor: "#033428",
+  paddingRight: 10,
+},
+btn: {
+  backgroundColor: "#F4D69C",
+  borderRadius: 10,
+},
+btnText:{
+  color: "#033428",
+  fontSize: 16,
+  fontWeight: "bold",
+  padding: 12,
+},
+  formContainer: {
+    width:"100%",
+    height:"100%",
+    backgroundColor:"#033428"
   },
   form: {
     position: "absolute",
@@ -49,12 +71,12 @@ const styles = StyleSheet.create({
     top:11,
     fontSize:16,
   },
-  btnLoginContainer:{
+  btnCreateContainer:{
     width:"100%",
     alignItems:"center",
     marginTop:10,
   },
-  btnLogin:{
+  btnCreate:{
     backgroundColor:"#033428",
     color:"#ffffff",
     fontSize:16,
@@ -69,6 +91,7 @@ const styles = StyleSheet.create({
     fontSize:16,
     fontWeight:"bold",
     marginTop:60,
+    color:"red",
   }
 })
 

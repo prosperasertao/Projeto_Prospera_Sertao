@@ -1,16 +1,22 @@
 import React from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
-import Btn_create_account from './src/components/button';
-import Form from './src/components/form'
+import CreateAccount from './src/pages/CreateAccount'
+import Login from './src/pages/Login'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
+const Stack = createNativeStackNavigator();
 export default function App() {
 
 return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#033428" barStyle="light-content"></StatusBar>
-      <Btn_create_account></Btn_create_account>
-      <Form></Form>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
+          <Stack.Screen name="CreateAccount" component={CreateAccount} options={{ headerShown: false, headerBackVisible: false, }}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
