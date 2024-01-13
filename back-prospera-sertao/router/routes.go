@@ -1,9 +1,9 @@
 package router
 
 import (
-	//docs "github.com/prosperasertao/Projeto_Prospera_Sertao/tree/main/back-prospera-sertao/docs"
-	"github.com/prosperasertao/Projeto_Prospera_Sertao/tree/main/back-prospera-sertao/handler"
 	"github.com/gin-gonic/gin"
+	docs "github.com/prosperasertao/Projeto_Prospera_Sertao/tree/main/back-prospera-sertao/docs"
+	"github.com/prosperasertao/Projeto_Prospera_Sertao/tree/main/back-prospera-sertao/handler"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
@@ -12,7 +12,7 @@ func initializeRoutes(router *gin.Engine) {
 	// Initialize Handler
 	handler.InitializeHandler()
 	basePath := "/api/v1"
-	//docs.SwaggerInfo.BasePath = basePath
+	docs.SwaggerInfo.BasePath = basePath
 	v1 := router.Group(basePath)
 	{
 		v1.GET("/opening", handler.ShowOpeningHandler)
